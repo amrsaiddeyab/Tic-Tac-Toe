@@ -23,4 +23,4 @@ This project was created to strengthen my Python programming skills and improve 
 
 ## Screenshot
 
-[Game Screenshot](screenshot.png) 
+![Game Screenshot](screenshot.png) 
