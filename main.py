@@ -3,7 +3,26 @@
 #import random and sys  
 import random
 import sys
-from guessing_game import name_validation, string_validation, again_validation
+
+def string_validation(playing_type):
+    while True:
+        playing_type = playing_type.lower()
+
+        if playing_type in ('no','yes'):
+            return playing_type
+          
+        print("You must type 'No' or 'yes'")
+
+        playing_type = input("For playing with me enter ('Yes'), for playing with frined enter('No'): ")
+
+def name_validation(name):
+    while True:
+        if name.isalpha():
+            return name
+        
+        print("You must enter letters only")
+        
+        name = input("Please enter your name: ")
 
 def player_validation(first, x_player, o_player):
     while True:
@@ -101,6 +120,24 @@ def computer_turn(b, available, computer_move, computer_type):
 
     result = winner(b, computer_type)
     return result
+
+def again_validation():
+    again = input("Do you want to play again? ('yes' or 'no') ")
+
+    while True:
+        again = again.lower()
+        if again in ('yes', 'no'):
+            if again == 'yes':
+                main()
+    
+            else:
+                print("See you!")
+                sys.exit()
+
+        else:
+            print("You must type 'yes' or 'no'")
+
+        again = input("Do you want to play again? ('yes' or 'no') ")
 
 #Main:
 def main():
